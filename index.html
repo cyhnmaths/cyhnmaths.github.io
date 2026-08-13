@@ -3,215 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İlköğretim Matematik Özel Ders | LGS Hazırlık</title>
-    <!-- FontAwesome Icon Kütüphanesi -->
+    <title>Muharrem CEYHAN | LGS & Ortaokul Matematik Özel Ders</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        slateDark: '#0f172a'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #2b5876;
-            --secondary-color: #4e4376;
-            --accent-color: #f39c12;
-            --light-bg: #f8f9fa;
-            --dark-text: #2c3e50;
-            --border-radius: 12px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--light-bg);
-            color: var(--dark-text);
-            line-height: 1.6;
-        }
-
-        /* Hero Section */
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: -30px auto 40px auto;
-            padding: 0 20px;
-        }
-
-        .card {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Dersler/Seviyeler Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .grid-item {
-            background: var(--light-bg);
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid #e9ecef;
-            font-weight: bold;
-            color: var(--secondary-color);
-        }
-
-        .grid-item i {
-            display: block;
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-            color: var(--accent-color);
-        }
-
-        /* İletişim Butonları */
-        .contact-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
-            width: 100%;
-            max-width: 450px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 16px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.05rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            color: white;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-
-        .btn-instagram {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        }
-
-        .btn-email {
-            background-color: var(--primary-color);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #7f8c8d;
-            font-size: 0.9rem;
-        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
 
-    <!-- Header Section -->
-    <header>
-        <h1>İlköğretim Matematik Özel Ders</h1>
-        <p>5, 6, 7. Sınıf ve LGS Hazırlık Sürecinde Başarıya Birlikte Ulaşalım</p>
-    </header>
-
-    <div class="container">
-        
-        <!-- Hakkımda Section -->
-        <div class="card">
-            <h2><i class="fas fa-user-graduat"></i> Ders Yaklaşımı ve Metot</h2>
-            <p>
-                Matematik dersinde ezberci anlayıştan uzak, mantığa ve problem çözme becerilerine dayalı bir eğitim modeli uyguluyorum. 
-                Öğrencilerin eksiklerini tespit edip birebir takiple seviyelerine uygun özel ders planı hazırlıyorum.
-            </p>
-        </div>
-
-        <!-- Sınıf Seviyeleri Section -->
-        <div class="card">
-            <h2><i class="fas fa-book-open"></i> Ders Verilen Seviyeler</h2>
-            <div class="grid">
-                <div class="grid-item">
-                    <i class="fas fa-shapes"></i>
-                    5. Sınıf Matematik
-                </div>
-                <div class="grid-item">
-                    <i class="fas fa-calculator"></i>
-                    6. Sınıf Matematik
-                </div>
-                <div class="grid-item">
-                    <i class="fas fa-square-root-variable"></i>
-                    7. Sınıf Matematik
-                </div>
-                <div class="grid-item">
-                    <i class="fas fa-trophy"></i>
-                    LGS Hazırlık
-                </div>
-            </div>
-        </div>
-
-        <!-- İletişim Section (Form yerine eklenen alan) -->
-        <div class="card" style="text-align: center;">
-            <h2><i class="fas fa-paper-plane" style="margin: 0 auto;"></i> Benimle İletişime Geçin</h2>
-            <p style="margin-top: 10px; color: #666;">
-                Özel ders talepleri, seviye tespiti ve detaylı bilgi almak için aşağıdaki kanallardan doğrudan ulaşabilirsiniz.
-            </p>
-
-            <div class="contact-buttons">
-                <!-- Instagram DM Butonu -->
-                <!-- KULLANICI_ADIN yazan yere Instagram kullanıcı adını yaz -->
-                <a href="https://instagram.com/KULLANICI_ADIN" target="_blank" class="btn btn-instagram">
-                    <i class="fab fa-instagram" style="font-size: 22px;"></i> Instagram'dan Mesaj Atın
-                </a>
-
-                <!-- E-posta Butonu -->
-                <!-- E_POSTA_ADRESIN yazan yere kendi e-posta adresini yaz -->
-                <a href="mailto:E_POSTA_ADRESIN@gmail.com" class="btn btn-email">
-                    <i class="fas fa-envelope" style="font-size: 22px;"></i> E-posta Gönderin
-                </a>
-            </div>
-        </div>
-
+    <!-- Top Announcement / Accent Bar -->
+    <div class="bg-gradient-to-r from-brand-700 via-brand-600 to-indigo-700 text-white text-xs sm:text-sm font-medium py-2 px-4 text-center tracking-wide">
+        ✨ Türkiye Yüzyılı Maarif Modeli Uyumlu | 2026-2027 Eğitim-Öğretim Yılı Birebir Özel Ders Kontenjanları Açılmıştır.
     </div>
 
-    <footer>
-        <p>&copy; Tüm Hakları Saklıdır.</p>
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 text-white flex items-center justify-center font-bold text-lg shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                    MC
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-slate-900 text-base sm:text-lg leading-tight">Muharrem CEYHAN</span>
+                    <span class="text-xs text-brand-600 font-semibold tracking-wide">Matematik Öğretmeni</span>
+                </div>
+            </a>
+            <a href="#iletisim" class="inline-flex items-center justify-center px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-brand-600 hover:bg-brand-700 rounded-lg shadow-sm hover:shadow transition-all">
+                İletişim
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 space-y-16 py-10 sm:py-16">
+
+        <!-- Hero Section -->
+        <section class="text-center space-y-6 pt-4">
+            <!-- Dynamic Avatar Placeholder -->
+            <div class="relative inline-block">
+                <div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-2xl bg-gradient-to-br from-brand-50 to-brand-100 border-2 border-brand-200 flex items-center justify-center text-brand-600 shadow-lg shadow-brand-500/10">
+                    <i class="fa-solid fa-square-root-variable text-4xl"></i>
+                </div>
+                <span class="absolute bottom-0 right-0 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full" title="Ders Kayıtları Açık"></span>
+            </div>
+
+            <div class="space-y-3 max-w-2xl mx-auto">
+                <div class="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">
+                    <i class="fa-solid fa-award"></i> Yeni Maarif Modeli Uyumlu Öğretim
+                </div>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-snug">
+                    Matematik Korkusunu <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">Mantık ve Muhakeme</span> ile Aşın
+                </h1>
+                <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
+                    LGS hazırlık ve ortaokul (5, 6, 7. sınıf) düzeyinde Türkiye Yüzyılı Maarif Modeli’ne uygun yeni nesil soru analizleri, birebir takip ve süreç odaklı öğrenme.
+                </p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                <a href="#iletisim" class="w-full sm:w-auto px-6 py-3 text-sm font-semibold text-white bg-slateDark hover:bg-slate-800 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-paper-plane text-xs"></i>
+                    Benimle İletişime Geç
+                </a>
+                <a href="https://instagram.com/KULLANICI_ADIN" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-3 text-sm font-semibold text-slate-700 bg-white hover:bg-slate-100 border border-slate-200 rounded-xl shadow-sm transition-all flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-instagram text-pink-600 text-base"></i>
+                    Instagram DM ile Ulaş
+                </a>
+            </div>
+
+            <!-- Key Highlights Badges -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-200/60">
+                <div class="p-3 bg-white rounded-xl border border-slate-100 shadow-sm text-center">
+                    <div class="text-brand-600 text-lg mb-1"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="text-xs font-bold text-slate-800">Maarif Modeli</div>
+                    <div class="text-[10px] text-slate-500">Güncel Müfredat Uyumlu</div>
+                </div>
+                <div class="p-3 bg-white rounded-xl border border-slate-100 shadow-sm text-center">
+                    <div class="text-brand-600 text-lg mb-1"><i class="fa-solid fa-lightbulb"></i></div>
+                    <div class="text-xs font-bold text-slate-800">Yeni Nesil Soru</div>
+                    <div class="text-[10px] text-slate-500">Mantık & Muhakeme</div>
+                </div>
+                <div class="p-3 bg-white rounded-xl border border-slate-100 shadow-sm text-center">
+                    <div class="text-brand-600 text-lg mb-1"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="text-xs font-bold text-slate-800">Birebir Takip</div>
+                    <div class="text-[10px] text-slate-500">Düzenli Veli Raporu</div>
+                </div>
+                <div class="p-3 bg-white rounded-xl border border-slate-100 shadow-sm text-center">
+                    <div class="text-brand-600 text-lg mb-1"><i class="fa-solid fa-laptop-house"></i></div>
+                    <div class="text-xs font-bold text-slate-800">Online & Yüz Yüze</div>
+                    <div class="text-[10px] text-slate-500">Esnek Ders Modeli</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/80 shadow-sm space-y-4">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-4">
+                <div class="w-8 h-8 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-user-tie text-sm"></i>
+                </div>
+                <h2 class="text-xl font-bold text-slate-900">Hakkımda & Öğretim Yaklaşımım</h2>
+            </div>
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                Merhaba, ben <strong>Muharrem CEYHAN</strong>. Matematik dersini ezberci kalıplardan çıkarıp, öğrencinin soruya bakış açısını değiştiren bir çalışma sistemi uyguluyorum. Özellikle <strong>LGS ve ortaokul (5, 6, 7. sınıf)</strong> seviyesindeki öğrencilerin ihtiyaç duyduğu kavramsal becerileri ve yeni nesil soru çözme tekniklerini adım adım geliştiriyorum.
+            </p>
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                Derslerimde <strong>Türkiye Yüzyılı Maarif Modeli</strong>'nin getirdiği süreç odaklı öğrenme, beceri temelli yaklaşım ve derinlemesine kavrama prensiplerini esas alıyorum. Ders sürecimiz sadece ders saati ile sınırlı kalmaz; hafta içi ödev takibi, soru çözümleri ve öğrencinin ihtiyacına uygun birebir rehberlik desteği içerir.
+            </p>
+        </section>
+
+        <!-- Services Section -->
+        <section class="space-y-6">
+            <div class="text-center space-y-2">
+                <h2 class="text-2xl font-bold text-slate-900">Ders Programları & Hizmetler</h2>
+                <p class="text-xs sm:text-sm text-slate-500">Yeni müfredata ve öğrencinin hedeflerine özel planlanan ders seçenekleri</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1: LGS -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-colors group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-red-50 text-red-600 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase text-red-600 bg-red-50 px-2 py-0.5 rounded-md">8. Sınıf Seviyesi</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-2">LGS Hazırlık Paketi</h3>
+                        </div>
+                        <ul class="text-xs text-slate-600 space-y-2.5">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i>
+                                <span>MEB tarzı yeni nesil beceri temelli sorular</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i>
+                                <span>Süre yönetimi ve sınav stratejileri</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i>
+                                <span>Haftalık deneme analizi ve eksik tespiti</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2: Müfredat Desteği -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-colors group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-book-open-reader"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase text-brand-600 bg-brand-50 px-2 py-0.5 rounded-md">5, 6, 7. Sınıflar</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-2">Maarif Modeli & Müfredat</h3>
+                        </div>
+                        <ul class="text-xs text-slate-600 space-y-2.5">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i>
+                                <span>Yeni Maarif Modeli uyumlu kavrama etkinlikleri</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i>
+                                <span>Okul yazılı sınavlarına hazırlık</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i>
+                                <span>Düzenli ödev ve soru çözümü alışkanlığı</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3: Online Ders -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-brand-500 transition-colors group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-xl group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-display"></i>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-bold tracking-wider uppercase text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-md">Birebir Esnek</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-2">Online Birebir Ders</h3>
+                        </div>
+                        <ul class="text-xs text-slate-600 space-y-2.5">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i>
+                                <span>İnteraktif grafik tablet ve ekran paylaşımı</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i>
+                                <span>Ders sonu PDF ders notları ve soru kaydı</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-check text-emerald-500 mt-0.5"></i>
+                                <span>Konumdan bağımsız, konforlu ders imkanı</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Working Methodology Section -->
+        <section class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 space-y-6 shadow-xl">
+            <div class="space-y-2 border-b border-slate-800 pb-4">
+                <h2 class="text-xl sm:text-2xl font-bold">Çalışma Prensibim ve Süreç</h2>
+                <p class="text-xs sm:text-sm text-slate-400">Başarıya giden yolda disiplinli ve sistemli takip</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="space-y-2">
+                    <div class="text-brand-400 text-sm font-bold tracking-wider uppercase">01. Analiz</div>
+                    <h3 class="font-bold text-base text-slate-100">Seviye Tespiti</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">İlk derste öğrencinin mevcut seviyesi ve öğrenme stili belirlenir, buna uygun özel bir yol haritası çizilir.</p>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-brand-400 text-sm font-bold tracking-wider uppercase">02. Takip</div>
+                    <h3 class="font-bold text-base text-slate-100">Haftalık Ödevlendirme</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Sadece ders saatinde değil, hafta içi verilen ödevler ve çözülemeyen sorular takip altında tutulur.</p>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-brand-400 text-sm font-bold tracking-wider uppercase">03. İletişim</div>
+                    <h3 class="font-bold text-base text-slate-100">Veli Bilgilendirmesi</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Öğrencinin gelişim süreci, ödev performansı ve deneme netleri periyodik olarak veli ile paylaşılır.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section (Form yerine doğrudan iletişim butonları yerleştirildi) -->
+        <section id="iletisim" class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+            <div class="space-y-2 text-center max-w-xl mx-auto">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-50 px-3 py-1 rounded-full">İletişim & Başvuru</span>
+                <h2 class="text-2xl font-bold text-slate-900">Benimle İletişime Geçin</h2>
+                <p class="text-xs sm:text-sm text-slate-500">Özel ders talepleri, seviye tespiti ve detaylı bilgi almak için aşağıdaki kanallardan doğrudan ulaşabilirsiniz.</p>
+            </div>
+
+            <div class="max-w-md mx-auto space-y-3 pt-2">
+                <!-- Instagram DM Butonu -->
+                <!-- KULLANICI_ADIN kısmını kendi Instagram kullanıcı adınla değiştir -->
+                <a href="https://instagram.com/KULLANICI_ADIN" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-6 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:opacity-95 text-white font-semibold rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-3 group">
+                    <i class="fa-brands fa-instagram text-lg group-hover:scale-110 transition-transform"></i>
+                    Instagram DM ile Yazın
+                </a>
+
+                <!-- E-posta Gönderin Butonu -->
+                <!-- E_POSTA_ADRESIN kısmını kendi mail adresinle değiştir -->
+                <a href="mailto:E_POSTA_ADRESIN@gmail.com" class="w-full py-3.5 px-6 bg-slateDark hover:bg-slate-800 text-white font-semibold rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-3 group">
+                    <i class="fa-solid fa-envelope text-lg group-hover:scale-110 transition-transform"></i>
+                    E-posta Gönderin
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Simple Modern Footer -->
+    <footer class="border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500">
+        <div class="max-w-4xl mx-auto px-4 space-y-2">
+            <p>© 2026 Muharrem CEYHAN. Tüm hakları saklıdır.</p>
+            <p class="text-[11px] text-slate-400">Türkiye Yüzyılı Maarif Modeli Uyumlu LGS ve Ortaokul Matematik Özel Ders</p>
+        </div>
     </footer>
 
 </body>

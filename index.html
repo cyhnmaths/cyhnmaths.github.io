@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Özel Ders İletişim</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>İlköğretim Matematik Özel Ders | LGS Hazırlık</title>
+    <!-- FontAwesome Icon Kütüphanesi -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #2b5876;
+            --secondary-color: #4e4376;
+            --accent-color: #f39c12;
+            --light-bg: #f8f9fa;
+            --dark-text: #2c3e50;
+            --border-radius: 12px;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,41 +24,89 @@
         }
 
         body {
-            background-color: #f4f7f6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
         }
 
-        .contact-card {
-            background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            padding: 40px 30px;
-            max-width: 480px;
-            width: 100%;
+        /* Hero Section */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 60px 20px;
             text-align: center;
         }
 
-        .contact-card h2 {
-            color: #2c3e50;
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: -30px auto 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Dersler/Seviyeler Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .grid-item {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .grid-item i {
+            display: block;
             font-size: 1.8rem;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
+            color: var(--accent-color);
         }
 
-        .contact-card p {
-            color: #7f8c8d;
-            font-size: 1rem;
-            line-height: 1.5;
-            margin-bottom: 30px;
-        }
-
-        .btn-container {
+        /* İletişim Butonları */
+        .contact-buttons {
             display: flex;
             flex-direction: column;
             gap: 15px;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn {
@@ -56,12 +114,13 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
-            padding: 14px 20px;
-            border-radius: 10px;
+            padding: 16px 24px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            font-weight: bold;
+            font-size: 1.05rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            color: white;
         }
 
         .btn:hover {
@@ -71,39 +130,89 @@
 
         .btn-instagram {
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            color: white;
         }
 
         .btn-email {
-            background-color: #2b5876;
-            color: white;
+            background-color: var(--primary-color);
         }
 
-        .btn i {
-            font-size: 1.3rem;
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-    <div class="contact-card">
-        <h2>Benimle İletişime Geçin</h2>
-        <p>Özel ders talepleri, seviye tespiti ve detaylı bilgi almak için aşağıdaki kanallardan dilediğiniz zaman ulaşabilirsiniz.</p>
-        
-        <div class="btn-container">
-            <!-- Instagram DM Butonu -->
-            <!-- Lütfen KULLANICI_ADIN kısmını kendi instagram kullanıcı adınla değiştir -->
-            <a href="https://instagram.com/KULLANICI_ADIN" target="_blank" class="btn btn-instagram">
-                <i class="fab fa-instagram"></i> Instagram DM ile Yazın
-            </a>
+    <!-- Header Section -->
+    <header>
+        <h1>İlköğretim Matematik Özel Ders</h1>
+        <p>5, 6, 7. Sınıf ve LGS Hazırlık Sürecinde Başarıya Birlikte Ulaşalım</p>
+    </header>
 
-            <!-- E-posta (Mail) Butonu -->
-            <!-- Lütfen E_POSTA_ADRESIN kısmını kendi mail adresinle değiştir -->
-            <a href="mailto:E_POSTA_ADRESIN@gmail.com" class="btn btn-email">
-                <i class="fas fa-envelope"></i> E-posta Gönderin
-            </a>
+    <div class="container">
+        
+        <!-- Hakkımda Section -->
+        <div class="card">
+            <h2><i class="fas fa-user-graduat"></i> Ders Yaklaşımı ve Metot</h2>
+            <p>
+                Matematik dersinde ezberci anlayıştan uzak, mantığa ve problem çözme becerilerine dayalı bir eğitim modeli uyguluyorum. 
+                Öğrencilerin eksiklerini tespit edip birebir takiple seviyelerine uygun özel ders planı hazırlıyorum.
+            </p>
         </div>
+
+        <!-- Sınıf Seviyeleri Section -->
+        <div class="card">
+            <h2><i class="fas fa-book-open"></i> Ders Verilen Seviyeler</h2>
+            <div class="grid">
+                <div class="grid-item">
+                    <i class="fas fa-shapes"></i>
+                    5. Sınıf Matematik
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-calculator"></i>
+                    6. Sınıf Matematik
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-square-root-variable"></i>
+                    7. Sınıf Matematik
+                </div>
+                <div class="grid-item">
+                    <i class="fas fa-trophy"></i>
+                    LGS Hazırlık
+                </div>
+            </div>
+        </div>
+
+        <!-- İletişim Section (Form yerine eklenen alan) -->
+        <div class="card" style="text-align: center;">
+            <h2><i class="fas fa-paper-plane" style="margin: 0 auto;"></i> Benimle İletişime Geçin</h2>
+            <p style="margin-top: 10px; color: #666;">
+                Özel ders talepleri, seviye tespiti ve detaylı bilgi almak için aşağıdaki kanallardan doğrudan ulaşabilirsiniz.
+            </p>
+
+            <div class="contact-buttons">
+                <!-- Instagram DM Butonu -->
+                <!-- KULLANICI_ADIN yazan yere Instagram kullanıcı adını yaz -->
+                <a href="https://instagram.com/KULLANICI_ADIN" target="_blank" class="btn btn-instagram">
+                    <i class="fab fa-instagram" style="font-size: 22px;"></i> Instagram'dan Mesaj Atın
+                </a>
+
+                <!-- E-posta Butonu -->
+                <!-- E_POSTA_ADRESIN yazan yere kendi e-posta adresini yaz -->
+                <a href="mailto:E_POSTA_ADRESIN@gmail.com" class="btn btn-email">
+                    <i class="fas fa-envelope" style="font-size: 22px;"></i> E-posta Gönderin
+                </a>
+            </div>
+        </div>
+
     </div>
+
+    <footer>
+        <p>&copy; Tüm Hakları Saklıdır.</p>
+    </footer>
 
 </body>
 </html>
